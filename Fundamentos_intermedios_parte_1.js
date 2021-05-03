@@ -70,8 +70,45 @@ console.log(nUltimo([5, 2, 3, 6, 4, 9, 7], 3));
 
 // Array: Segundo más grande: Devuelve el segundo elemento más grande de un array. Dado [42,1,4,3.14,7], devuelve 7.  
 // Si el array es muy pequeño, devuelve null.
+function segundoMayor(arr) {
 
+    if (arr.length > 2) {
+        var primero = 0;
+        var segundo = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > primero) {
+                segundo = primero;
+                primero = arr[i];
+            } else if (arr[i] > segundo) {
+                segundo = arr[i];
+            }
+        }
+        return segundo;
+    }
+    return "null"
+}
+console.log(segundoMayor([42, 1, 4, 3.14, 7]))
 
 // Doble Problema Par: Crea una función que cambie un array dado duplicando cada uno de sus elementos en una posición par,
 // y manteniendo el orden original. Convierte [4, "Ulysses", 42, false]   a    
 //[4,4, "Ulysses", "Ulysses", 42, 42, false, false].
+
+function doblePar(arr) {
+    y = [];
+    for (var i = 0; i < arr.length; i++) {
+        y.push(arr[i]);
+        y.push(arr[i]);
+    }
+    return y;
+}
+console.log(doblePar([4, "Ulysses", 42, false]))
+
+// Crea una función Fib(n) que devuelve el enésimo número Fibonacci. Usa recursión para esto. 
+
+function serieFib(num) {
+    if (num == 0 || num == 1) {
+        return num;
+    }
+    return serieFib(num - 2) + serieFib(num - 1);
+}
+console.log(serieFib(5))
